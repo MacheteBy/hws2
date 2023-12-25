@@ -71,3 +71,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 }
 
 export default GreetingContainer
+function setError(arg0: string) {
+    throw new Error('Function not implemented.')
+}
+
