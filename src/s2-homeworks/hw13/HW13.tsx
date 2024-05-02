@@ -34,15 +34,12 @@ const HW13 = () => {
         axios
             .post(url, { success: x })
             .then((res) => {
-                console.log(res)
                 setCode(`Код ${res.status.toString()}`)
                 setImage(success200)
                 setText(res.data.errorText)
                 setInfo(res.data.info)
-
             })
             .catch((e) => {
-                console.log(e)
                 if (e.code === 'ERR_NETWORK') {
                     setCode(`Error!`)
                     setImage(errorUnknown)
@@ -54,8 +51,6 @@ const HW13 = () => {
                     setText(e.response.data.errorText || 'AxiosError')
                     setInfo(e.response.data.info || 'AxiosError')
                 }
-
-
             })
     }
 
@@ -69,7 +64,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                    // disabled={info === '...loading'}
+                        disabled={info === '...loading' ? true : false}
                     // дописать
 
                     >
@@ -79,7 +74,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                    // disabled={info === '...loading'}
+                        disabled={info === '...loading' ? true : false}
                     // дописать
 
                     >
@@ -89,7 +84,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                    // disabled={info === '...loading'}
+                        disabled={info === '...loading' ? true : false}
                     // дописать
 
                     >
@@ -99,7 +94,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                    // disabled={info === '...loading'}
+                        disabled={info === '...loading' ? true : false}
                     // дописать
 
                     >
