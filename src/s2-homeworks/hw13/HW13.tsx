@@ -66,7 +66,7 @@ const HW13 = () => {
             <div className={s2.hw}>
                 <div className={s.buttonsContainer}>
                     <SuperButton
-                        id={'#hw13-send-true'}
+                        id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
                     // disabled={info === '...loading'}
@@ -76,7 +76,7 @@ const HW13 = () => {
                         Send true
                     </SuperButton>
                     <SuperButton
-                        id={'#hw13-send-false'}
+                        id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
                     // disabled={info === '...loading'}
@@ -86,7 +86,7 @@ const HW13 = () => {
                         Send false
                     </SuperButton>
                     <SuperButton
-                        id={'#hw13-send-undefined'}
+                        id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
                     // disabled={info === '...loading'}
@@ -96,10 +96,10 @@ const HW13 = () => {
                         Send undefined
                     </SuperButton>
                     <SuperButton
-                        id={'#hw13-send-null'}
+                        id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        // disabled={info === '...loading'}
+                    // disabled={info === '...loading'}
                     // дописать
 
                     >
