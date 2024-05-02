@@ -34,25 +34,28 @@ const HW13 = () => {
         axios
             .post(url, { success: x })
             .then((res) => {
+                console.log(res)
                 setCode(`Код ${res.status.toString()}`)
                 setImage(success200)
-                // дописать
                 setText(res.data.errorText)
                 setInfo(res.data.info)
+
             })
             .catch((e) => {
-                // дописать
+                console.log(e)
                 if (e.code === 'ERR_NETWORK') {
-                    setCode('Error!')
+                    setCode(`Error!`)
                     setImage(errorUnknown)
                     setText(e.message)
                     setInfo(e.name)
                 } else {
                     setCode(`Ошибка ${e.response.status}`)
-                    setImage(e.response.status === 500 ? error500 : error400)
+                    setImage(e.response.status === '500' ? error500 : error400)
                     setText(e.response.data.errorText || 'AxiosError')
                     setInfo(e.response.data.info || 'AxiosError')
                 }
+
+
             })
     }
 
@@ -63,38 +66,42 @@ const HW13 = () => {
             <div className={s2.hw}>
                 <div className={s.buttonsContainer}>
                     <SuperButton
-                        id={'hw13-send-true'}
+                        id={'#hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
-                        disabled={info === '...loading'}
+                    // disabled={info === '...loading'}
+                    // дописать
+
                     >
                         Send true
                     </SuperButton>
                     <SuperButton
-                        id={'hw13-send-false'}
+                        id={'#hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        // дописать
-                        disabled={info === '...loading'}
+                    // disabled={info === '...loading'}
+                    // дописать
+
                     >
                         Send false
                     </SuperButton>
                     <SuperButton
-                        id={'hw13-send-undefined'}
+                        id={'#hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        // дописать
-                        disabled={info === '...loading'}
+                    // disabled={info === '...loading'}
+                    // дописать
+
                     >
                         Send undefined
                     </SuperButton>
                     <SuperButton
-                        id={'hw13-send-null'}
+                        id={'#hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        // дописать
-                        disabled={info === '...loading'}
+                        // disabled={info === '...loading'}
+                    // дописать
+
                     >
                         Send null
                     </SuperButton>
