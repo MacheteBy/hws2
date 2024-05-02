@@ -34,7 +34,7 @@ const HW13 = () => {
         axios
             .post(url, { success: x })
             .then((res) => {
-                setCode('Код 200!')
+                setCode(`Код ${res.status.toString()}`)
                 setImage(success200)
                 // дописать
                 setText(res.data.errorText)
@@ -42,21 +42,16 @@ const HW13 = () => {
             })
             .catch((e) => {
                 // дописать
-                if (e.response.status === 500) {
-                    setCode('Код 500!')
-                    setImage(error500)
-                    setText(e.response.data.errorText)
-                    setInfo(e.response.data.info)
-                } else if (e.response.status === 400) {
-                    setCode('Код 400!')
-                    setImage(error400)
-                    setText(e.response.data.errorText)
-                    setInfo(e.response.data.info)
-                } else {
+                if (e.code === 'ERR_NETWORK') {
                     setCode('Error!')
                     setImage(errorUnknown)
                     setText(e.message)
                     setInfo(e.name)
+                } else {
+                    setCode(`Ошибка ${e.response.status}`)
+                    setImage(e.response.status === 500 ? error500 : error400)
+                    setText(e.response.data.errorText || 'AxiosError')
+                    setInfo(e.response.data.info || 'AxiosError')
                 }
             })
     }
