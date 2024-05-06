@@ -48,8 +48,8 @@ const HW13 = () => {
                 } else {
                     setCode(`Ошибка ${e.response.status}`)
                     setImage(e.response.status === '500' ? error500 : error400)
-                    setText(e.response.data.errorText || 'AxiosError')
-                    setInfo(e.response.data.info || 'AxiosError')
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
                 }
             })
     }
