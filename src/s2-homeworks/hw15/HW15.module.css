@@ -54,7 +54,8 @@
     align-self: center;
 }
 
-.loading:before, .loading:after {
+.loading:before,
+.loading:after {
     content: '';
     border-radius: 50%;
     position: absolute;
@@ -63,7 +64,7 @@
 }
 
 .loading:after {
-    box-shadow: 0 3px 0 #FF3D00 inset;
+    box-shadow: 0 3px 0 #0029dd inset;
     animation: rotate 4s linear infinite;
 }
 
@@ -71,6 +72,7 @@
     0% {
         transform: rotate(0)
     }
+
     100% {
         transform: rotate(360deg)
     }
