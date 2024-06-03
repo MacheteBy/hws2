@@ -62,7 +62,7 @@ const HW15 = () => {
                 setLoading(false)
             })
     }
-
+console.log(techs)
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
         // setPage(
