@@ -86,7 +86,7 @@ const HW15 = () => {
         // sendQuery(
         sendQuery({ sort, page: 1, count: count })
         // setSearchParams(
-        setSearchParams(newSort)
+        setSearchParams(newSort.length === 0 ? `page=1&count=${count}` : `page=1&count=${count}&sort=${newSort}`)
         //
     }
 
