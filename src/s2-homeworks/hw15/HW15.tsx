@@ -62,7 +62,7 @@ const HW15 = () => {
                 setLoading(false)
             })
     }
-console.log(techs)
+
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
         // setPage(
@@ -86,7 +86,8 @@ console.log(techs)
         // sendQuery(
         sendQuery({ sort, page: 1, count: count })
         // setSearchParams(
-        setSearchParams(newSort.length === 0 ? `page=1&count=${count}` : `page=1&count=${count}&sort=${newSort}`)
+        const queryString = newSort.length === 0 ? `page=1&count=${count}` : `page=1&count=${count}&sort=${newSort}`
+		setSearchParams(queryString)
         //
     }
 
@@ -96,6 +97,7 @@ console.log(techs)
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [])
+
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
