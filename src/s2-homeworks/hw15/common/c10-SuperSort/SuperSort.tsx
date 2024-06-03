@@ -16,10 +16,10 @@ export const pureChange = (sort: string, down: string, up: string) => {
     // пишет студент, sort: (click) => down (click) => up (click) => '' (click) => down ...
     switch (sort) {
         case '':
-            return down
-        case down:
             return up
         case up:
+            return down
+        case down:
             return ''
         default:
             return ''
