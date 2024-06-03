@@ -52,7 +52,7 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-                console.log(res)
+                // console.log(res)
                 if (res) {
                     setTechs(res.data.techs)
                     setTotalCount(res.data.totalCount)
@@ -65,7 +65,7 @@ const HW15 = () => {
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
-
+        console.log(newPage, newCount)
         // setPage(
         setPage(newPage)
         // setCount(

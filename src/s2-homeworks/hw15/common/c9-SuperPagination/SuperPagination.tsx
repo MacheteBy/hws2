@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import SuperSelect from '../../../hw07/common/c5-SuperSelect/SuperSelect'
-import {Pagination} from '@mui/material'
+import { Pagination } from '@mui/material'
 import s from './SuperPagination.module.css'
 
 export type SuperPaginationPropsType = {
@@ -20,7 +20,7 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
 
     const onChangeCallback = (event: any, page: number) => {
         // пишет студент
-        console.log(event)
+        // console.log(page, itemsCountForPage)
         onChange(page, itemsCountForPage)
 
     }
@@ -52,9 +52,9 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
                 id={id + '-pagination-select'}
                 value={itemsCountForPage}
                 options={[
-                    {id: 4, value: 4},
-                    {id: 7, value: 7},
-                    {id: 10, value: 10},
+                    { id: 4, value: 4 },
+                    { id: 7, value: 7 },
+                    { id: 10, value: 10 },
                 ]}
                 onChange={onChangeSelect}
             />
