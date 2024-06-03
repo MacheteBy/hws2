@@ -22,7 +22,7 @@ export const pureChange = (sort: string, down: string, up: string) => {
         case down:
             return ''
         default:
-            return ''
+            return down
     }
 }
 
